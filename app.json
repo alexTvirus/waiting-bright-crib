@@ -1,0 +1,7 @@
+{
+  "name": "通用Web代理 (Node cac)",
+  "description": "基于Node-cac，轻松翻墙看世界",
+  "image": "heroku/nodejs",
+  "keywords": ["node-cac", "gfw-cac"],
+  "website": "https://github.com/cac"
+}
