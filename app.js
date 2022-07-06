@@ -8,11 +8,19 @@ var Transform = require('stream').Transform;
 
 var app = express();
 
+function validateRequest(data) {
+	//console.log(data.url)
+	//console.log(data.headers)
+	
+}
+
 var cacConfig = {
     prefix: '/proxy/',
-    host: "www.pornhub.com",
-    standardMiddleware: true
+	//host: "www.xvideos.com",
+	
+	standardMiddleware: true
 };
+
 
 
 // this line must appear before any express.static calls (or anything else that sends responses)
