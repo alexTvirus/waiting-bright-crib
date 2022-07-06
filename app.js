@@ -13,7 +13,6 @@ var cacConfig = {
 };
 
 
-
 // this line must appear before any express.static calls (or anything else that sends responses)
 app.use(cac(cacConfig));
 

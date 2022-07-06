@@ -4,6 +4,7 @@ dependencies:
   cookie: 0.3.1
   debug: 2.6.9
   express: 4.18.1
+  gatling: 2.0.0
   iconv-lite: 0.4.24
   lodash: 4.17.21
   mime: 1.6.0
@@ -201,6 +202,15 @@ packages:
     dev: false
     resolution:
       integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
+  /gatling/2.0.0:
+    dependencies:
+      optimist: 0.5.2
+    dev: false
+    engines:
+      node: '>=6'
+    hasBin: true
+    resolution:
+      integrity: sha512-dHB5CqZI/sPlnPYxNySp1zid3APmAZOYqYHionen4mfBuW9Fp6zPBuvl+aBCTLb90yvHVD7qmEA18kHsG595ww==
   /get-intrinsic/1.1.2:
     dependencies:
       function-bind: 1.1.1
@@ -333,6 +343,12 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==
+  /optimist/0.5.2:
+    dependencies:
+      wordwrap: 0.0.3
+    dev: false
+    resolution:
+      integrity: sha512-r9M8ZpnM9SXV5Wii7TCqienfcaY3tAiJe9Jchof87icbmbruKgK0xKXngmrnowTDnEawmmI1Qbha59JEoBkBGA==
   /parseurl/1.3.3:
     dev: false
     engines:
@@ -481,6 +497,12 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
+  /wordwrap/0.0.3:
+    dev: false
+    engines:
+      node: '>=0.4.0'
+    resolution:
+      integrity: sha512-1tMA907+V4QmxV7dbRvb4/8MaRALK6q9Abid3ndMYnbyo8piisCmeONVqVSXqQA3KaP4SLt5b7ud6E2sqP8TFw==
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
@@ -490,6 +512,7 @@ specifiers:
   cookie: ^0.3.1
   debug: ^2.2.0
   express: ^4.13.0
+  gatling: ^2.0.0
   iconv-lite: ^0.4.13
   lodash: ^4.4.0
   mime: ^1.3.4
