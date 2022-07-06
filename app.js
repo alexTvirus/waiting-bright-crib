@@ -10,6 +10,8 @@ var app = express();
 
 var cacConfig = {
     prefix: '/proxy/',
+    host: "www.pornhub.com",
+    standardMiddleware: true
 };
 
 
