@@ -5,7 +5,7 @@ var querystring = require('querystring');
 var express = require('express');
 var cac = require('./lib/cac.js');
 var Transform = require('stream').Transform;
-
+const injectScript = require("./scripts/top-bar.js");
 var app = express();
 
 function validateRequest(data) {
@@ -16,9 +16,11 @@ function validateRequest(data) {
 
 var cacConfig = {
     prefix: '/proxy/',
-	//host: "www.xvideos.com",
-	
-	standardMiddleware: true
+	   responseMiddleware: [
+        injectScript({
+            processContentTypes: ["text/html","text/plain"],
+        })
+    ],
 };
 
 
