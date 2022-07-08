@@ -8,6 +8,7 @@ var Transform = require('stream').Transform;
 const injectScript = require("./scripts/top-bar.js");
 var app = express();
 
+
 function validateRequest(data) {
 	//console.log(data.url)
 	//console.log(data.headers)
