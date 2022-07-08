@@ -6,7 +6,7 @@ var express = require('express');
 var cac = require('./lib/cac.js');
 var Transform = require('stream').Transform;
 const injectScript = require("./scripts/top-bar.js");
-const FixUrlOnGlit = require("./scripts/fix-url-on-glit.js");
+const fixUrlOnGlit = require("./scripts/fix-url-on-glit.js");
 var app = express();
 
 
@@ -19,7 +19,7 @@ function validateRequest(data) {
 var cacConfig = {
     prefix: '/proxy/',
       requestMiddleware:[
-        FixUrlOnGlit()
+        fixUrlOnGlit()
     ],
 	     responseMiddleware: [
         injectScript({
