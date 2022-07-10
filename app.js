@@ -7,7 +7,7 @@ var cac = require('./lib/cac.js');
 var Transform = require('stream').Transform;
 const injectScript = require("./scripts/top-bar.js");
 const fixUrlOnGlit = require("./scripts/fix-url-on-glit.js");
-const FixPornhub = require("./scripts/fix-pornhub.js");
+const fixPornhub = require("./scripts/fix-pornhub.js");
 var app = express();
 
 
@@ -21,7 +21,7 @@ var cacConfig = {
     prefix: '/proxy/',
       requestMiddleware:[
         fixUrlOnGlit(),
-        FixPornhub()
+        fixPornhub()
     ],
     // responseMiddleware: [
     //     injectScript({

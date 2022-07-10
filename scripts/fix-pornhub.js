@@ -7,7 +7,7 @@ module.exports = function () {
         // data.url = decodeURIComponent(data.url)
         var uri = URL.parse(data.url);
         if (uri.hostname == "www.pornhub.com" ) {
-            data.url = data.url.replace("www.pornhub.com","localhost:55901")
+            data.url = data.url.replace("https://www.pornhub.com","http://localhost:55901")
         }
         
     }
