@@ -21,11 +21,11 @@ var cacConfig = {
       requestMiddleware:[
         fixUrlOnGlit()
     ],
-	     responseMiddleware: [
-        injectScript({
-            processContentTypes: ["text/html","text/plain"],
-        })
-    ],
+    // responseMiddleware: [
+    //     injectScript({
+    //         processContentTypes: ["text/html","text/plain"],
+    //     })
+    // ],
 };
 
 
