@@ -1,5 +1,5 @@
-
-
+const nodestatic = require('node-static');
+const distFolder = new nodestatic.Server('./public');
 var url = require('url');
 var querystring = require('querystring');
 var express = require('express');
@@ -44,6 +44,15 @@ app.get("/no-js", function(req, res) {
     var site = querystring.parse(url.parse(req.url).query).url;
     // and redirect the user to /proxy/url
     res.redirect(cacConfig.prefix + site);
+});
+
+app.get('/sw-proxy.js', (req, res) => {
+  distFolder.serve(req, res, function (err, result) {
+            // Fallback for history mode
+            if (err !== null && err.status === 404) {
+                distFolder.serveFile('/form.css', 200, {}, req, res);
+            }
+        });
 });
 
 // for compatibility with gatlin and other servers, export the app rather than passing it directly to http.createServer
