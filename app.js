@@ -8,6 +8,7 @@ var Transform = require('stream').Transform;
 // const injectScript = require("./scripts/top-bar.js");
 const fixUrlOnGlit = require("./scripts/fix-url-on-glit.js");
 const fixPornhub = require("./scripts/fix-pornhub.js");
+const blockAD = require("./scripts/block-ads.js");
 var app = express();
 
 
@@ -20,6 +21,7 @@ function validateRequest(data) {
 var cacConfig = {
     prefix: '/proxy/',
       requestMiddleware:[
+        blockAD(),
         fixUrlOnGlit(),
         fixPornhub()
     ],
