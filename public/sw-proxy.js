@@ -6,13 +6,10 @@ var supportPreloading = false;
 
 self.addEventListener('fetch', function(event) {
 	const url = event.request.url;
-   if (url.startsWith(self.location.origin)){
+   if (!url.startsWith(self.location.origin)){
       	event.respondWith(fetch(event.request));
-   }else if (!url.toString().startsWith("https://www.pornhub.com")){
-	   event.respondWith(handleRequest2(event.request)) // add your custom response
    }else {
-	   event.respondWith(handleRequest(event.request)) // add your custom response
-
+	   event.respondWith(handleRequest2(event.request)) // add your custom response
    }
 
 });
@@ -56,24 +53,17 @@ async function handleRequest2(request) {
 
     
      let tmp = new URL(request.url);
-    // if(request.url.indexOf('/hls/videos/') != -1){
-      const modifiedHeaders = new Headers(request.headers);
-      modifiedHeaders.append('Origin', 'https://'+tmp.hostname);
-      const modifiedRequestInit = { headers: modifiedHeaders, mode: 'cors' };
       
-      //let s_url = "https://proxy-cors-heroku.herokuapp.com/"+request.url
-      let url = new URL(request.url);
-      let req = new Request(url.toString(),request);
-      req = new Request(req,modifiedRequestInit);
+    if(tmp.protocol ='http:'){
+      tmp.protocol = 'https:'
+      let req = new Request(tmp.toString(),request);
       const response = await fetch(req);
       const newResponse = new Response(response.body, response);
-      newResponse.headers.append('cac',url.toString())
-      newResponse.headers.append('Access-Control-Allow-Origin','*')
       return newResponse
       
-    // }else{
-    //   return fetch(request)
-    // }
+    }else{
+      return fetch(request)
+    }
 }
 
 async function handleRequest(request) {

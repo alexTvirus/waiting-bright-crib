@@ -60,5 +60,14 @@ app.get('/form.css', (req, res) => {
         });
 });
 
+app.get('/sw-proxy.js', (req, res) => {
+  distFolder.serve(req, res, function (err, result) {
+            // Fallback for history mode
+            if (err !== null && err.status === 404) {
+                distFolder.serveFile('/sw-proxy.js', 200, {}, req, res);
+            }
+        });
+});
+
 // for compatibility with gatlin and other servers, export the app rather than passing it directly to http.createServer
 module.exports = app;
