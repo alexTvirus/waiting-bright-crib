@@ -53,20 +53,14 @@ async function handleRequest2(request) {
 
     
      let tmp = new URL(request.url);
-      console.log(tmp.href)
+   
     if (request.cache === 'only-if-cached' && request.mode !== 'same-origin') {
       return;
     }
-    if(tmp.protocol =='http:'){
-      tmp.protocol = 'https:'
-      let req = new Request(tmp.toString(),request);
-      const response = await fetch(req);
-      const newResponse = new Response(response.body, response);
-      return newResponse
-      
-    }else{
-      return fetch(request)
-    }
+    delete request["mode"];
+    tmp.protocol = 'https:'
+    let req = new Request(tmp.toString(),request);
+    return fetch(req,{credentials: 'include'})
 }
 
 async function handleRequest(request) {
