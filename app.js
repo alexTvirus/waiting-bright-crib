@@ -22,7 +22,7 @@ function validateRequest(data) {
 var cacConfig = {
     prefix: '/proxy/',
       requestMiddleware:[
-        blockAD(),
+        // blockAD(),
         fixUrlOnGlit(),
         fixPornhub(),
         
