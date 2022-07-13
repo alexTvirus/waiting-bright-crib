@@ -51,7 +51,7 @@ app.get("/no-js", function(req, res) {
     res.redirect(cacConfig.prefix + site);
 });
 
-app.get('/sw-proxy.js', (req, res) => {
+app.get('/form.css', (req, res) => {
   distFolder.serve(req, res, function (err, result) {
             // Fallback for history mode
             if (err !== null && err.status === 404) {
