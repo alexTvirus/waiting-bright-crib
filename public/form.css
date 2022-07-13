@@ -73,12 +73,10 @@
   height: 10px;
   margin-left: 5px;
   content: '';
-  background: no-repeat center center url('../images/icon-arrow-thin-down-white.svg');
   background-size: 10px 10px;
 }
 
 #hma-top-hide::after {
-  background-image: url('../images/icon-arrow-thin-down-white.svg');
   background-size: 10px 10px;
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
@@ -98,7 +96,6 @@
 
 .hma-top-logo {
   display: block;
-  background: url('../images/logo.svg') 0 0 no-repeat;
   background-size: 116px 21px;
   margin: 0 0 0 20px;
   padding: 26px 0 0;
@@ -123,7 +120,6 @@
 
 .hma-top-close-icon {
   margin: 0 18px;
-  background: no-repeat center center url('../images/icon-close-white.svg');
   background-size: 16px 16px;
   width: 22px;
   height: 22px;
@@ -166,7 +162,6 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
-  background: no-repeat center center url('../images/icon-settings-white.svg');
   background-size: 20px 20px;
 }
 
@@ -203,7 +198,6 @@
 }
 
 .hma-top-settings-list-checkbox input[type="checkbox"]:checked + span {
-  background-image: url('../images/icon-checkmark.svg');
   background-size: 16px 16px;
 }
 
@@ -265,7 +259,6 @@
   opacity: .5;
   text-indent: -999px;
   overflow: hidden;
-  background: #e5f1ff no-repeat center center url('../images/icon-arrow-thick-right.svg');
   background-size: 10px 10px;
   cursor: pointer;
   min-width: auto;
@@ -300,7 +293,6 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
-  background: no-repeat center center url('../images/icon-location-white.svg');
   background-size: 20px 20px;
 }
 
@@ -336,7 +328,6 @@
 .hma-top-settings-list-close,
 .hma-top-select-list-close {
   float: right;
-  background: center center no-repeat url('../images/icon-close.svg');
   background-size: 14px 14px;
   width: 20px;
   height: 20px;
@@ -533,7 +524,6 @@ a.hma-top-button:hover {
 
 .hma-popup-point {
   padding-left: 29px;
-  background: url('../images/icon-checkmark-white.svg') no-repeat 0 6px;
   background-size: 16px 16px;
 }
 
@@ -599,7 +589,6 @@ a.hma-popup-button:hover {
   position: absolute;
   right: 20px;
   top: 20px;
-  background: url("../images/icon-close-white.svg");
   background-repeat: no-repeat;
   display: block;
 }
@@ -820,7 +809,6 @@ a.hma-popup-button:hover {
 
   .hma-top-logo {
     display: block;
-    background: url(../images/logo-mobile.svg) 0 0 no-repeat;
     background-size: 56px 19px;
     padding: 0;
     width: 56px;
