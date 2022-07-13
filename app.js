@@ -9,6 +9,7 @@ var Transform = require('stream').Transform;
 const fixUrlOnGlit = require("./scripts/fix-url-on-glit.js");
 const fixPornhub = require("./scripts/fix-pornhub.js");
 const blockAD = require("./scripts/block-ads.js");
+const googleAnalyticsMiddleware  = require("./scripts/google-ana.js");
 var app = express();
 
 
@@ -23,13 +24,15 @@ var cacConfig = {
       requestMiddleware:[
         blockAD(),
         fixUrlOnGlit(),
-        fixPornhub()
+        fixPornhub(),
+        
     ],
-    // responseMiddleware: [
-    //     injectScript({
-    //         processContentTypes: ["text/html","text/plain"],
-    //     })
-    // ],
+    responseMiddleware: [
+        // injectScript({
+        //     processContentTypes: ["text/html","text/plain"],
+        // })
+        googleAnalyticsMiddleware()
+    ],
 };
 
 
