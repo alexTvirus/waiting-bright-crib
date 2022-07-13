@@ -69,10 +69,12 @@
         </form>
 
         <script type="text/javascript">
-            if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw-proxy.js?v91',{scope:"/"}).then(function(reg){ if (reg.active) console.log('serviceworker installed') }) .catch(function(err){ console.log('registration failed: ' + err) }) }
             document.getElementsByName("url")[0].focus();
         </script>
-
+        <script type="text/javascript">
+          (function (global) { if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw-proxy.js?v91',{scope:"/"}).then(function(reg){ if (reg.active) console.log('serviceworker installed') }) .catch(function(err){ console.log('registration failed: ' + err) }) }})(this);
+        </script>
+        
         <!-- [END] -->
 
     </div>
