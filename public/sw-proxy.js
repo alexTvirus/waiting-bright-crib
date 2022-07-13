@@ -53,7 +53,10 @@ async function handleRequest2(request) {
 
     
      let tmp = new URL(request.url);
-      
+      console.log(tmp.href)
+    // if (request.cache === 'only-if-cached' && request.mode !== 'same-origin') {
+    //   return;
+    // }
     if(tmp.protocol ='http:'){
       tmp.protocol = 'https:'
       let req = new Request(tmp.toString(),request);
