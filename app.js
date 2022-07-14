@@ -31,7 +31,7 @@ var cacConfig = {
         // injectScript({
         //     processContentTypes: ["text/html","text/plain"],
         // })
-        // googleAnalyticsMiddleware()
+        googleAnalyticsMiddleware()
     ],
 };
 
