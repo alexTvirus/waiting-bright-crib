@@ -51,13 +51,14 @@ async function handleRequest2(request) {
 //     });
 //   });
 
-    
+    // console.log(request.url)
      let tmp = new URL(request.url);
    
     if (request.cache === 'only-if-cached' && request.mode !== 'same-origin') {
       return;
     }
-    console.log(tmp.protocol)
+    if(request.url.includes("ht.js?site_id=3"))
+      console.log(request.url)
     // let clonerequest = request.clone();
     // clonerequest["mode"]="";
     // tmp.protocol = 'https:'
