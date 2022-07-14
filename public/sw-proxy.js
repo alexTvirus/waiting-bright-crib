@@ -57,10 +57,13 @@ async function handleRequest2(request) {
     if (request.cache === 'only-if-cached' && request.mode !== 'same-origin') {
       return;
     }
-    delete request["mode"];
-    tmp.protocol = 'https:'
-    let req = new Request(tmp.toString(),request);
-    return fetch(req,{credentials: 'include'})
+    console.log(tmp.protocol)
+    // let clonerequest = request.clone();
+    // clonerequest["mode"]="";
+    // tmp.protocol = 'https:'
+    // let req = new Request(tmp.toString(),clonerequest);
+    // return fetch(req,{credentials: 'include'})
+    return fetch(request,{credentials: 'include'})
 }
 
 async function handleRequest(request) {
