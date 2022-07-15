@@ -2,13 +2,13 @@
 
 var Transform = require('stream').Transform;
 var URL = require('url');
-var google_analytics_id = process.env.GA_ID || 'UA-213229401-1';
+var google_analytics_id = process.env.GA_ID || 'G-N30SHFS6P2';
 module.exports = function () {
 
     function addGa(html) {
         if (google_analytics_id) {
             var ga = [
-                `<!-- Global site tag (gtag.js) - Google Analytics --> <script async src='https://www.googletagmanager.com/gtag/js?id=G-N30SHFS6P2'></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-N30SHFS6P2'); </script>`
+                `<!-- Global site tag (gtag.js) - Google Analytics --> <script async src='https://www.googletagmanager.com/gtag/js?id=${google_analytics_id}'></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${google_analytics_id}'); </script>`
                 ].join("\n");
             html = html.replace("</body>", ga + "\n\n</body>");
         }
