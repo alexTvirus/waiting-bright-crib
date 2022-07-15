@@ -8,7 +8,7 @@ module.exports = function () {
     function addGa(html) {
         if (google_analytics_id) {
             var ga = [
-                `<script async src='https://www.googletagmanager.com/gtag/js?id=UA-213229401-1'></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ${google_analytics_id}); </script>`
+                `<!-- Global site tag (gtag.js) - Google Analytics --> <script async src='https://www.googletagmanager.com/gtag/js?id=G-N30SHFS6P2'></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-N30SHFS6P2'); </script>`
                 ].join("\n");
             html = html.replace("</body>", ga + "\n\n</body>");
         }
