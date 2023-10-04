@@ -23,8 +23,8 @@ var cacConfig = {
     prefix: '/proxy/',
       requestMiddleware:[
         // blockAD(),
-        fixUrlOnGlit(),
-        fixPornhub(),
+        //fixUrlOnGlit(),
+        //fixPornhub(),
         
     ],
     responseMiddleware: [
