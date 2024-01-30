@@ -69,5 +69,52 @@ app.get('/sw-proxy.js', (req, res) => {
         });
 });
 
+app.post('/xxx',(req, response) => {
+    console.log("begin")
+	var go =true
+     //response.writeHead(200, {
+    //    "Connection": "keep-alive",
+    //    "Transfer-Encoding": "chunked",
+     //   "Keep-Alive": "timeout=51111, max=10001"
+    //});
+    // response.write(response._header);
+
+    // response._headerSent = false;
+
+    req.on("data", (chunk) => {
+        console.log("to send:" + chunk.toString());
+        response.write(JSON.stringify(chunk.toString()));
+        response.end()
+		// if(go){
+		// 	go = false
+		// 	 setInterval(()=>{
+		// 	response.write(JSON.stringify("test "));
+        //
+		// 	}, 2000);
+		// }
+    })
+
+    req.on("end", () => {
+        console.log("end 1");
+    })
+
+    req.on("error", (error) => {
+        console.log(error);
+    })
+
+	
+    //for (let i = 0; i < 3; i++) {
+    //    response.write(JSON.stringify("test " + i));
+    //}
+
+    
+
+   
+
+    console.log("end")
+    //response.end()
+    //return res.sendStatus(101);
+});
+
 // for compatibility with gatlin and other servers, export the app rather than passing it directly to http.createServer
 module.exports = app;
