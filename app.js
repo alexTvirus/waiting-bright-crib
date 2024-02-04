@@ -69,6 +69,14 @@ app.get('/sw-proxy.js', (req, res) => {
         });
 });
 
+function wait(time) {
+    return new Promise(resolve => {
+        setTimeout(resolve, time);
+    });
+}
+
+app.get('')
+
 app.post('/xxx',(req, response) => {
     console.log("begin")
 	var go =true
