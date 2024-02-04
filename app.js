@@ -75,7 +75,11 @@ function wait(time) {
     });
 }
 
-app.get('')
+app.get('/waiting',async (req, response)=>{
+  await wait(3000)
+  response.end('ok')
+  
+})
 
 app.post('/xxx',(req, response) => {
     console.log("begin")
